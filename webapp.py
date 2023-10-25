@@ -10,7 +10,7 @@ import pickle
 import streamlit as st
 
 # Load the saved model 
-loaded_model = pickle.load(open('https://github.com/PatilAshwini1009/PCOS/blob/main/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('https://github.com//PatilAshwini1009//PCOS//blob//main//trained_model.sav', 'rb'))
 
 def pcos_pred(input_data):
     inputdataas = np.asarray(input_data)
