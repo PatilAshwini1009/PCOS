@@ -10,8 +10,24 @@ import pickle
 import streamlit as st
 
 # Load the saved model 
-loaded_model = pickle.load(open('https://github.com//PatilAshwini1009//PCOS//blob//main//trained_model.sav', 'rb'))
+import requests
 
+# URL of the model file on GitHub
+model_url = 'https://github.com/PatilAshwini1009/PCOS/raw/main/trained_model.sav'
+
+# Send a GET request to the URL
+response = requests.get(model_url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Save the content of the response to a local file
+    with open('trained_model.sav', 'wb') as f:
+        f.write(response.content)
+else:
+    print("Failed to download the model file.")
+
+#loaded_model = pickle.load(open('https://github.com//PatilAshwini1009//PCOS//blob//main//trained_model.sav', 'rb'))
+loaded_model = response 
 def pcos_pred(input_data):
     inputdataas = np.asarray(input_data)
     input_data_reshaped = inputdataas.reshape(1, -1)
