@@ -26,6 +26,7 @@ def pcos_pred(input_data):
 def main():
     # Giving a title 
     st.title("PCOS Prediction Web App")
+    st.write("PCOS : Early Detection , Better Protection ")
     
     # Getting input data from the user 
     FollicleNo_R = st.text_input("Follicle number in Right Ovary")
